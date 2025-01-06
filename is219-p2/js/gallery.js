@@ -127,7 +127,7 @@ window.requestAnimFrame = (function() {
       }
 
       mJson = data;
-
+  
       // Loop through the JSON data to create GalleryImage objects
       mJson.images.forEach(function(imageData) {
         var galleryImage = {
