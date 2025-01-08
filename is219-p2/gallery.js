@@ -10,7 +10,9 @@ window.requestAnimFrame = (function() {
     };
 })();
 
+
 animate();
+
 
 var mLastFrameTime = 0;
 var mWaitTime = 5000; // Time in ms
@@ -21,13 +23,16 @@ function animate() {
     mLastFrameTime = currentTime;
   }
 
+
   if ((currentTime - mLastFrameTime) > mWaitTime) {
     swapPhoto();
     mLastFrameTime = currentTime;
   }
 }
 
+
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
+
 
 // Swap the photo to the next one in the gallery
 function swapPhoto() {
@@ -35,8 +40,10 @@ function swapPhoto() {
     var imageElement = document.querySelector('#slideShow img');
     var nextImage = mImages[mCurrentIndex];
 
+
     // Update the image source with the new image from the GalleryImage object
     imageElement.src = nextImage.img.src;
+
 
     // Update the details section with information from the GalleryImage
     var detailsElement = document.querySelector('#slideShow .details');
@@ -44,29 +51,37 @@ function swapPhoto() {
     detailsElement.querySelector('.description').textContent = "Description: " + nextImage.description;
     detailsElement.querySelector('.date').textContent = "Date: " + nextImage.date;
 
+
     // Increment the index and loop back to the first image when reaching the end
     mCurrentIndex = (mCurrentIndex + 1) % mImages.length;
   }
 }
 
+
 // Counter for the mImages array
 var mCurrentIndex = 0;
+
 
 // XMLHttpRequest variable
 var mRequest = new XMLHttpRequest();
 
+
 // Array holding GalleryImage objects (see below)
 var mImages = [];
+
 
 // Holds the retrieved JSON information
 var mJson;
 
+
 // URL for the JSON to load by default
 var mUrl = 'images.json'; // Replace this with the actual path to your JSON file
+
 
 // Function to fetch JSON data
 function fetchJSON(url, callback) {
   mRequest.open('GET', url, true);
+
 
   mRequest.onreadystatechange = function() {
     if (mRequest.readyState === 4) {
@@ -85,8 +100,10 @@ function fetchJSON(url, callback) {
     }
   };
 
+
   mRequest.send();
 }
+
 
 // Function to handle image loading
 function makeGalleryImageOnloadCallback(galleryImage) {
@@ -96,15 +113,18 @@ function makeGalleryImageOnloadCallback(galleryImage) {
   };
 }
 
+
 // jQuery document ready function
 $(document).ready(function() {
   // Initially hides the photos' metadata information
   $('.details').eq(0).hide();
 });
 
+
 // Load JSON data and initialize the image gallery
 window.addEventListener('load', function() {
   console.log('window loaded');
+
 
   // Fetch the JSON data using fetchJSON
   fetchJSON(mUrl, function(error, data) {
@@ -113,7 +133,9 @@ window.addEventListener('load', function() {
       return;
     }
 
+
     mJson = data;
+
 
     // Loop through the JSON data to create GalleryImage objects
     mJson.images.forEach(function(imageData) {
@@ -124,6 +146,7 @@ window.addEventListener('load', function() {
         imageData.imgPath         // Image path (src)
       );
 
+
       // Create an image object and trigger the onload callback
       var img = new Image();
       img.onload = makeGalleryImageOnloadCallback(galleryImage);
@@ -132,6 +155,7 @@ window.addEventListener('load', function() {
   });
 }, false);
 
+
 // Constructor for GalleryImage
 function GalleryImage(location, description, date, imgSrc) {
   this.location = location || '';
@@ -139,8 +163,11 @@ function GalleryImage(location, description, date, imgSrc) {
   this.date = date || '';
   this.img = imgSrc || '';
 
+
   if (this.img) {
     this.img = new Image();
     this.img.src = imgSrc; // Set the image source
   }
 }
+
+
