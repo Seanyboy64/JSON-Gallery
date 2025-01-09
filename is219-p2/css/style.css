@@ -1,98 +1,130 @@
 body {
-    overflow: auto;
-    font-family: 'Century Gothic', sans-serif;
-    background-image: url(../img/geometry.jpg);
+	overflow: auto;
+	font-family: 'Century Gothic', sans-serif;
+	background-image: url(../img/geometry.jpg);
 }
 
 #photoBooth {
-    margin-top: .2em;
-    padding: 10px;
-    width: 650px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: white;
-    border-radius: 2px;
-}  
+	margin-top: .2em;
+	padding: 10px;
+	width: 650px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	border-radius: 2px;
+}	
 
-#slideShow {    
-    position: relative;
+#slideShow {	
+	position: relative;
 }
 
 .photoHolder {
-    position: relative;
-    width: 80%;
-    margin: 0 auto;
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
 }
 
 .moreIndicator {
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    z-index: 3;
-    opacity: .8;
-    top: 0px;
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	z-index: 3;
+	opacity: .8;
+	bottom: 10px;
+	left: 45%;
+	top: 0px;
 }
 
-.thumbnail {
-    position: relative;
-    box-shadow: 1px 3px 20px 0px;
-}
-
-.banner {
-    text-align: center;
-    font-size: 1.25em;
-}
-
-#nav {
-    clear: both;
-    position: relative;
-}
-
-#prevPhoto {
-    height: 42px;
-    width: 42px;
-}
-
-#nextPhoto {
-    height: 42px;
-    width: 42px;
-}
-
-.details p {
-    margin-top: 20px;
-}
-.details {
-    border: 1px #000 dashed;
-    padding: 0px 10px;
-    margin: 20px 0px;
-}
-
-.rot90 {
-    transform: rotate(90deg);
-    transition: transform 0.3s ease;
-}
-
-.rot180 {
-    transform: rotate(180deg);
-    transition: transform 0
-}
 .thumbnail {
 	position: relative;
 	box-shadow: 1px 3px 20px 0px;
-	transition: opacity 1s ease-in-out; /* Smooth fade-in/fade-out transition */
-  }
-  
-  #slideShow img {
-	transition: opacity 1s ease-in-out; /* Smooth fade effect for image */
-  }
-  
-  .details p {
+}
+
+
+.banner {
+	text-align: center;
+	font-size: 1.25em;
+}
+
+#nav {
+	clear: both;
+	position: relative;
+}
+
+#prevPhoto {
+	height: 42px;
+	width: 42px;
+}
+
+#nextPhoto {
+	height: 42px;
+	width: 42px;
+}
+
+#nextPhoto:hover, #prevPhoto:hover {
+	opacity: 0.8;
+}
+
+.details p {
 	margin-top: 20px;
-  }
-  
-  .details {
+}
+.details {
 	border: 1px #000 dashed;
 	padding: 0px 10px;
 	margin: 20px 0px;
-  }
-  
+}
+
+/*Add CSS styles to rotate the element 90deg
+Make it animate nicely. You'll need CSS3 for this*/
+.rot90 {
+/* Firefox */
+	-moz-transform:rotate(90deg);
+/* Webkit */
+	-webkit-transform:rotate(90deg);
+/* Opera */
+	-o-transform:rotate(90deg);
+/* Standard */
+	transform: rotate(90deg);
+/* Firefox */
+	-moz-transition: all 1s ease;
+/* Webkit */
+	-webkit-transition: all 1s ease;
+/* Opera */
+	-o-transition: all 1s ease;
+/* Standard */
+	transition: all 1s ease;
+}
+
+/*Add CSS styles to rotate the element 180deg
+Make it animate nicely. You'll need CSS3 for this*/
+.rot180 {
+/* Firefox */
+	-moz-transform:rotate(180deg);
+/* Webkit */
+	-webkit-transform:rotate(180deg);
+/* Opera */
+	-o-transform:rotate(180deg);
+/* Standard */
+	transform: rotate(180deg);
+}
+
+/*Add CSS styles to rotate the element 270deg
+Make it animate nicely. You'll need CSS3 for this*/
+.rot270 {
+/* Firefox */
+-moz-transform:rotate(270deg);
+/* Webkit */
+	-webkit-transform:rotate(270deg);
+/* Opera */
+	-o-transform:rotate(270deg);
+/* Standard */
+	transform: rotate(270deg);
+/* Firefox */
+	-moz-transition: all 1s ease;
+/* Webkit */
+	-webkit-transition: all 1s ease;
+/* Opera */
+	-o-transition: all 1s ease;
+/* Standard */
+	transition: all 1s ease;
+}
