@@ -1,0 +1,144 @@
+body {
+	overflow: auto;
+	font-family: 'Century Gothic', sans-serif;
+	background-image: url(../img/geometry.jpg);
+}
+
+#photoBooth {
+	margin-top: .2em;
+	padding: 10px;
+	width: 650px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: rgb(82, 73, 163);
+	border-radius: 2px;
+}	
+
+#slideShow {	
+	position: relative;
+}
+
+.photoHolder {
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.moreIndicator {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	z-index: 3;
+	opacity: .8;
+	bottom: 10px;
+	left: 45%;
+	
+}
+
+.thumbnail {
+	position: relative;
+	box-shadow: 1px 3px 20px 0px;
+	width: 100%;
+}
+
+
+.banner {
+	text-align: center;
+	font-size: 1.25em;
+}
+
+#nav {
+	clear: both;
+	position: relative;
+}
+
+#prevPhoto {
+	height: 42px;
+	width: 42px;
+}
+
+#nextPhoto {
+	height: 42px;
+	width: 42px;
+}
+
+#nextPhoto:hover, #prevPhoto:hover {
+	opacity: 0.8;
+}
+
+.details p {
+	margin-top: 20px;
+}
+.details {
+	border: 1px #000 dashed;
+	padding: 0px 10px;
+	margin: 20px 0px;
+}
+
+/*Add CSS styles to rotate the element 90deg
+Make it animate nicely. You'll need CSS3 for this*/
+.rot90 {
+/* Firefox */
+	-moz-transform:rotate(90deg);
+/* Webkit */
+	-webkit-transform:rotate(90deg);
+/* Opera */
+	-o-transform:rotate(90deg);
+/* Standard */
+	transform: rotate(90deg);
+/* Firefox */
+	-moz-transition: all 1s ease;
+/* Webkit */
+	-webkit-transition: all 1s ease;
+/* Opera */
+	-o-transition: all 1s ease;
+/* Standard */
+	transition: all 1s ease;
+}
+
+/*Add CSS styles to rotate the element 180deg
+Make it animate nicely. You'll need CSS3 for this*/
+.rot180 {
+/* Firefox */
+	-moz-transform:rotate(180deg);
+/* Webkit */
+	-webkit-transform:rotate(180deg);
+/* Opera */
+	-o-transform:rotate(180deg);
+/* Standard */
+	transform: rotate(180deg);
+}
+
+/*Add CSS styles to rotate the element 270deg
+Make it animate nicely. You'll need CSS3 for this*/
+.rot270 {
+/* Firefox */
+-moz-transform:rotate(270deg);
+/* Webkit */
+	-webkit-transform:rotate(270deg);
+/* Opera */
+	-o-transform:rotate(270deg);
+/* Standard */
+	transform: rotate(270deg);
+/* Firefox */
+	-moz-transition: all 1s ease;
+/* Webkit */
+	-webkit-transition: all 1s ease;
+/* Opera */
+	-o-transition: all 1s ease;
+/* Standard */
+	transition: all 1s ease;
+}
+/* New class to set the size of images in the slideshow */
+.slideshowImage {
+    width: 100%;  /* Adjust width as per requirement */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensures the image covers the entire area, even if it needs to be cropped */
+}
+
+/* Optional: You can also add a max-height if you want to restrict height */
+.slideshowImage {
+    width: 100%;
+    max-height: 400px; /* Adjust as needed */
+    object-fit: cover; /* Ensures proper scaling and cropping */
+}
